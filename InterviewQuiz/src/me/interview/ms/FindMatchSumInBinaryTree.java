@@ -2,6 +2,11 @@ package me.interview.ms;
 
 import java.util.ArrayList;
 
+/*
+ * 输入一个整数和一棵二元树。
+ * 
+ * 打印出和与输入整数相等的所有路径。
+ */
 public class FindMatchSumInBinaryTree {
 	
 	private static class TreeNode {
@@ -9,6 +14,7 @@ public class FindMatchSumInBinaryTree {
 		public TreeNode rNode;
 		public int data;
 	}
+	
 	
 	public static void main(String args[]) {
 		
@@ -24,10 +30,13 @@ public class FindMatchSumInBinaryTree {
 		root.lNode.rNode.data = 7;
 		
 		int sum =22;
+		
+		//记录路径
 		ArrayList<Integer> path = new ArrayList<Integer>();
 		helper(root, sum, path);
 		
 	}
+	
 	
 	public static void printPath (ArrayList<Integer> path) {
 		
@@ -39,6 +48,7 @@ public class FindMatchSumInBinaryTree {
 		System.out.print("\n");
 	}
 	
+	//递归解。加入当前节点，然后分别找出左子树和右子树的所有集合。
 	public static void helper( TreeNode root, int sum, ArrayList<Integer> path) {
 		
 		int pos = path.size();
